@@ -5,15 +5,28 @@ choix_fichier= input("Choissisez le fichier que vous souhaitez ouvrir : ")
 ouvre_fichier = open(choix_fichier,"r", encoding='utf8')
 lire_fichier = ouvre_fichier.readlines()
 
-print(lire_fichier)
+#print(lire_fichier)
 
-nombre_groupe = input("Combien de nombre de personnes souhaitez par groupe :")
+nombre_max_pers_groupe = int(input("Combien de nombre de personnes max souhaitez-vous par groupe :"))
 
-team = []
-longueur = len(lire_fichier)
-print(longueur)
+pers_fichier = len(lire_fichier)
+print(pers_fichier)
 
-#for number in nombre_groupe:
+pers_par_groupe = []
+
+
+if  pers_fichier % nombre_max_pers_groupe == 0 : 
+    nb_groupes = (pers_fichier//nombre_max_pers_groupe)
+else: 
+    nb_groupes = (pers_fichier//nombre_max_pers_groupe)+1
+print(nb_groupes)
+
+
+# for personne in range(pers_fichier) :
+#         if personne>0:
+#             pers_par_groupe.extend([pers_par_groupe+1])
+#             pers_fichier-=1
+#             print(personne)
 
 
 
